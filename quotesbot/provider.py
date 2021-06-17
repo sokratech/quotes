@@ -10,4 +10,6 @@ class QuotesProvider:
         return Quote(self._database.get_quote())
 
     def get(self):
-        return self.provide()
+        return self.provide_quote()
+
+

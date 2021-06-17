@@ -1,7 +1,16 @@
-from quotesbot.provider import QuotesProvider
+import sys
+
+from quotesbot.bot import QuotesBot
+
+from g_python.gextension import Extension
+
+extension_info = {
+    "title": "Quotes",
+    "description": "Sokratech QuotesBot",
+    "version": "1.0",
+    "author": "sokratech"
+}
 
 
-provider = QuotesProvider(max_length=90)
-
-for i in range(1000):
-    print(provider.provide_quote().to_string())
+if __name__ == '__main__':
+    QuotesBot(extension=Extension(extension_info, sys.argv))

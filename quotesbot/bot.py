@@ -21,14 +21,14 @@ class QuotesBot:
 
     def _on_chat_out(self, message: HMessage):
         text = message.packet.read_string()
-        if "!start" in text:
+        if "q!start" in text:
             message.is_blocked = True
             self._start_thread()
-        if "!stop" in text:
+        if "q!stop" in text:
             message.is_blocked = True
             self._quotes_thread.do_run = False
             print("Stopping quotes thread...")
-        if "!interval" in text:
+        if "q!interval" in text:
             message.is_blocked = True
             self._interval = int(text.replace("!interval ", ""))
 
